@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>무작위 인터뷰 질문</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 600px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    #question {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>랜덤 질문 생성기</h1>
+    <button onclick="showRandomQuestion()">질문 뽑기</button>
+    <div id="question"></div>
+  </div>
+
+  <script>
+    const questions = [
+      "1. 내가 가장 좋아하는 음식은?",
+      "2. 내가 가장 좋아하지 않는 음식은?",
+      "3. 내가 먹어본 것 중 가장 맛있었던 최고의 요리는?",
+      "4. 이번 주 나에게 최고로 좋았던 일 or 최악의 일은?",
+      "5. 우리 집에서 내가 제일 좋아하는 곳은 어디인가요?",
+      "6. 집에서 내가 즐겁게 할 수 있는 일이 한가지 있다면?",
+      "7. 내가 10대때 즐기던 취미는?",
+      "8. 별명이 무엇인가요? 그 별명은 언제 어디에서 어떻게 얻게 되었나요?",
+      "9. 나의 첫번째 직업은?",
+      "10. 내가 경험해 본 최고의 태풍이나 천재지변은?",
+      "11. 교회생활을 하면서 가장 재미있었던 일은?",
+      "12. 비 오는 날 무엇을 하나요?",
+      "13. 내가 제일 아끼는 것은?",
+      "14. 내가 가장 좋아하는 옷은?",
+      "15. 내가 만들어 본 음식 중 가장 실패작은 무엇이었나요?",
+      "16. 내가 먹어 본 음식 중 가장 형편 없었던 음식은?",
+      "17. 이사를 하거나 집안 인테리어를 하면서 가장 맘에 들었던 것은?",
+      "18. 내 이웃 중에 소개해 주고 싶은 좋은 이웃 or 독특한 이웃이 있나요?",
+      "19. 내가 사는 동네에서 가장 마음에 드는 것은 무엇인가요?",
+      "20. 내가 어릴 때 친구들과 자주 가던 곳은?",
+      // 나머지 질문들도 계속 이어서 추가 가능
+    ];
+
+    function showRandomQuestion() {
+      const index = Math.floor(Math.random() * questions.length);
+      document.getElementById("question").innerText = questions[index];
+    }
+  </script>
+</body>
+</html>
